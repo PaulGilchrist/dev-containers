@@ -7,6 +7,21 @@ fake = Faker()
 
 # Connect to Azure SQL database
 def anonymize(server, database, username, password):
+    """
+    Updates contact records in the specified SQL Server database.
+
+    Args:
+        server (str): The name of the SQL Server instance to connect to.
+        database (str): The name of the database to connect to.
+        username (str): The username to use for authentication.
+        password (str): The password to use for authentication.
+
+    Returns:
+        None
+
+    Raises:
+        pyodbc.Error: If there is an error connecting to the database or executing the SQL query.
+    """
     batch_size = 10000
     #driver= '/opt/homebrew/lib/libmsodbcsql.18.dylib' # driver= '{ODBC Driver 18 for SQL Server}'
     driver = '{ODBC Driver 18 for SQL Server}'
